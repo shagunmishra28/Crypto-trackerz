@@ -13,7 +13,7 @@ export default function MenuPanels() {
 
   return (
     <Tab.Panels>
-      <Tab.Panel className="grid gap-2 sm:max-w-md mx-auto">
+      <Tab.Panel className="grid gap-2 mx-auto sm:max-w-md">
         <List
           items={data.trending}
           render={(coin, index) => (
@@ -22,7 +22,7 @@ export default function MenuPanels() {
         />
       </Tab.Panel>
 
-      <Tab.Panel className="grid sm:grid-cols-2 gap-2">
+      <Tab.Panel className="grid gap-2 sm:grid-cols-2 sm:mx-2">
         <List
           items={data.coins}
           render={(coin) => <CoinCard key={coin.id} coin={coin} />}
