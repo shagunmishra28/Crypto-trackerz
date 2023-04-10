@@ -11,7 +11,7 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="flex flex-col min-h-screen bg-slate-100 text-slate-900">
+    <div className="flex flex-col min-h-screen bg-slate-100 text-slate-700">
       <Toolbar />
       {children}
       <Footer />

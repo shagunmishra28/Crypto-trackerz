@@ -7,15 +7,17 @@ import MenuPanels from './components/MenuPanels'
 export default function App() {
   return (
     <Layout>
-      <main className="mx-2">
-        <h1 className="font-semibold text-2xl mb-4 text-center">
+      <main className="w-full max-w-4xl px-2 mx-auto sm:px-0">
+        <h1 className="mb-4 text-2xl font-semibold text-center">
           Crypto Tracker
         </h1>
 
-        <Tab.Group>
-          <MenuTabs />
-          <MenuPanels />
-        </Tab.Group>
+        <section className="space-y-4">
+          <Tab.Group defaultIndex={0}>
+            <MenuTabs />
+            <MenuPanels />
+          </Tab.Group>
+        </section>
       </main>
     </Layout>
   )
