@@ -13,7 +13,7 @@ export default function App() {
         </h1>
 
         <section className="space-y-4">
-          <Tab.Group defaultIndex={1}>
+          <Tab.Group defaultIndex={2}>
             <MenuTabs />
             <MenuPanels />
           </Tab.Group>

@@ -28,29 +28,31 @@ ChartJS.register(
   Legend
 )
 
-const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      display: false
-    },
-    title: {
-      display: true,
-      text: 'Last 7 days price'
-    },
-    tooltip: {
-      displayColors: false,
-      backgroundColor: 'rgba(15, 23, 42, 0.8)'
-    }
-  }
-}
-
 interface CoinChartProps {
+  name: string
   data: number[]
 }
 
-export default function CoinChart({ data }: CoinChartProps) {
+export default function CoinChart({ name, data }: CoinChartProps) {
   const { currency } = useContext(CoinContext)
+
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: false
+      },
+      title: {
+        display: true,
+        text: `Last 7d ${name || 'coin'} price`,
+        color: 'rgba(51, 65, 85, 0.9)'
+      },
+      tooltip: {
+        displayColors: false,
+        backgroundColor: 'rgba(15, 23, 42, 0.8)'
+      }
+    }
+  }
 
   const config = {
     labels: getLast7DaysDates(),
@@ -64,9 +66,5 @@ export default function CoinChart({ data }: CoinChartProps) {
     ]
   }
 
-  return (
-    <div className="self-center w-full max-w-2xl">
-      <Line options={options} data={config} />
-    </div>
-  )
+  return <Line options={options} data={config} />
 }

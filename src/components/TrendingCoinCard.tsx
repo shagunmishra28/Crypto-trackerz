@@ -14,7 +14,7 @@ export default function TrendingCoinCard({
     <div className="flex items-center justify-between p-4 space-y-2 bg-white border rounded-md shadow-sm border-slate-200">
       <div>
         <h2 className="space-x-1 font-medium">
-          <span>{ranking}°</span>
+          <span>#{ranking}</span>
           <span>{coin.name}</span>
           <span className="font-normal text-slate-400">
             {coin.symbol.toUpperCase()}
