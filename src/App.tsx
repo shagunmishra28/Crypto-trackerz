@@ -12,7 +12,7 @@ export default function App() {
           Crypto Tracker
         </h1>
 
-        <section className="space-y-4">
+        <section className="space-y-4 mb-4">
           <Tab.Group defaultIndex={1}>
             <MenuTabs />
             <MenuPanels />

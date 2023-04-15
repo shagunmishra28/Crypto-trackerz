@@ -29,11 +29,12 @@ export default function MenuPanels() {
         </button>
       </div>
     )
+
   if (status === 'loading') return <LoadingSkeleton quantity={10} />
 
   return (
     <Tab.Panels>
-      <Tab.Panel className="grid gap-2 sm:max-w-md mx-auto">
+      <Tab.Panel className="grid gap-2 mx-auto sm:max-w-md">
         <List
           items={data.trending}
           render={(coin, index) => (

@@ -1,9 +1,9 @@
-// Components
-import CoinDetailsModal from './CoinDetailsModal'
-
 // Styles
 import { HiArrowSmUp as UpArrow } from 'react-icons/hi'
 import { HiArrowSmDown as DownArrow } from 'react-icons/hi'
+
+// Components
+import CoinDetailsModal from './CoinDetailsModal'
 
 // Helpers
 import priceFormatter from '../helpers/priceFormatter'

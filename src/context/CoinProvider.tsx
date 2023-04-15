@@ -33,12 +33,10 @@ export default function CoinProvider({ children }: CoinProviderProps) {
     queryKey: ['trending'],
     queryFn: () => axios.get(TRENDING_API_URL),
     onSuccess: (response) => {
-      const sanitized = response.data.coins.map(
-        (coin: { item: TrendingCoin }) => ({
-          ...coin.item
-        })
-      )
-      setTrending(sanitized)
+      const data = response.data.coins.map((coin: { item: TrendingCoin }) => ({
+        ...coin.item
+      }))
+      setTrending(data)
     }
   })
 

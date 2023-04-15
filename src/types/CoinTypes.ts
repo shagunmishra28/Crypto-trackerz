@@ -1,3 +1,5 @@
+export type Currencies = 'EUR' | 'USD'
+
 export type CoinContextType = {
   data: CoinState
   status: 'error' | 'success' | 'loading'
@@ -9,8 +11,6 @@ export type CoinState = {
   trending: TrendingCoin[]
   coins: Coin[]
 }
-
-export type Currencies = 'EUR' | 'USD'
 
 export type Coin = {
   id: string
