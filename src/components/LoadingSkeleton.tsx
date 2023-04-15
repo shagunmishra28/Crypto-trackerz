@@ -7,7 +7,7 @@ interface LoadingSkeletonProps {
 
 export default function LoadingSkeleton({ quantity }: LoadingSkeletonProps) {
   return (
-    <div className="grid gap-2 mx-auto sm:max-w-md">
+    <div className="grid sm:grid-cols-2 gap-2">
       {[...Array(quantity).keys()].map((_, index) => (
         <Skeleton key={index} className="w-full h-[90px]" />
       ))}

@@ -64,3 +64,13 @@ export type TrendingCoin = {
   price_btc: number
   score: number
 }
+
+export type SearchCoin = {
+  id: string
+  name: string
+  api_symbol: string
+  symbol: string
+  market_cap_rank: number
+  thumb: string
+  large: string
+}

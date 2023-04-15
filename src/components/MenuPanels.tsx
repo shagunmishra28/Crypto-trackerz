@@ -1,10 +1,10 @@
 // Components
 import { Tab } from '@headlessui/react'
-import List from './List'
-import CoinCard from './CoinCard'
 import TrendingCoinCard from './TrendingCoinCard'
-import SearchCoinInput from './SearchCoinInput'
 import LoadingSkeleton from './LoadingSkeleton'
+import SearchCoinList from './SearchCoinList'
+import CoinCard from './CoinCard'
+import List from './List'
 
 // Context
 import { useContext } from 'react'
@@ -13,7 +13,7 @@ import { CoinContext } from '../context/CoinProvider'
 export default function MenuPanels() {
   const { data, status } = useContext(CoinContext)
 
-  function refreshPage() {
+  function refreshPage(): void {
     window.location.reload()
   }
 
@@ -33,7 +33,7 @@ export default function MenuPanels() {
 
   return (
     <Tab.Panels>
-      <Tab.Panel className="grid gap-2 mx-auto sm:max-w-md">
+      <Tab.Panel className="grid gap-2 sm:grid-cols-2">
         <List
           items={data.trending}
           render={(coin, index) => (
@@ -42,20 +42,15 @@ export default function MenuPanels() {
         />
       </Tab.Panel>
 
-      <Tab.Panel className="grid gap-2 mx-auto sm:max-w-md">
+      <Tab.Panel className="grid gap-2 sm:grid-cols-2">
         <List
           items={data.coins}
           render={(coin) => <CoinCard key={coin.id} coin={coin} />}
         />
       </Tab.Panel>
 
-      <Tab.Panel className="grid gap-2 mx-auto sm:max-w-md">
-        <SearchCoinInput />
-
-        <List
-          items={data.coins}
-          render={(coin) => <CoinCard key={coin.id} coin={coin} />}
-        />
+      <Tab.Panel>
+        <SearchCoinList />
       </Tab.Panel>
     </Tab.Panels>
   )

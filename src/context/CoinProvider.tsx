@@ -1,6 +1,5 @@
 // Hooks
 import { ReactNode, createContext, useState } from 'react'
-import { Line } from 'react-chartjs-2'
 import { useQuery } from '@tanstack/react-query'
 
 // Libs
