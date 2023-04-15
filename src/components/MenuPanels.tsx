@@ -33,7 +33,7 @@ export default function MenuPanels() {
 
   return (
     <Tab.Panels>
-      <Tab.Panel className="grid gap-2 sm:grid-cols-2">
+      <Tab.Panel className="grid gap-2 sm:max-w-md mx-auto">
         <List
           items={data.trending}
           render={(coin, index) => (
